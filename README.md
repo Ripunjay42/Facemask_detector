@@ -1,5 +1,9 @@
-# Facemask_detector
-It's  a web application using Django framework for user, through which user can  use cemera feed to detect people wearing facemask or not.
+# Facemask_detector#
+***Developed as a Undergraduate Project under the guidance of Mr. P. P. D. Sarma, Assistant Professor, LCBC Maligaon.***
+
+1. It's  a web application using Django framework, through which a user can use cemera feed to detect people wearing facemask or not and storing the captures as per user requirements.
+2. Employs TensorFlow and OpenCV to detect face masks on peoples.
+3. Tools/ Technologies used : HTML, CSS, Javascript, Python, SQLite3.
 
 #Developers:-
 1. Ripunjay Choudhury (US-191-023-0042)
