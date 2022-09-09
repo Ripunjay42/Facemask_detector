@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- <script src="/static/script.js"></script> -->
+    <title>{% block title %}{% endblock title %} |ripunjay</title>
+    <style>
+      html {
+          scroll-behavior: smooth;
+      }
+      .modal-body{
+          background-color:rgb(8, 22, 0);
+      }
+      .modal-header{
+        background-color:rgb(8, 22, 0);
+      }
+      label.form-label{
+      color:chartreuse;
+      font-size:18px;
+      font-weight:bolder;
+      }
+    .modal-title{
+    color:chartreuse;
+    font-size: 30px;
+    font-weight:bolder;
+    }
+    .navbar-brand{
+          font-weight: bolder;
+          font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          padding-left: 0;
+          padding-right:840px;
+    }
+    .navbar-nav > li{
+          font-weight:normal;
+          font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    /* .alert{
+      background-color: cadetblue;
+      height: 10px;
+    } */
+    </style>
+    {% block head %}{% endblock head %}
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-collapse bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">FACEMASK DETECTION</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item {% block homeactive %} {% endblock homeactive %}" >
+                <a class="nav-link active" aria-current="page" href="/home">Home</a>
+              </li>
+              <li class="nav-item {% block aboutactive %} {% endblock aboutactive %}">
+                <a class="nav-link" href="/about">About</a>
+              </li>
+              <li class="nav-item {% block contactactive %} {% endblock contactactive %}">
+                <a class="nav-link" href="/contact">Contact Us</a>
+              </li>
+            </ul>
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown mr-2">
+              <a class="nav-li dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Welcome {{request.user}}
+              </a>
+              <ul class="dropdown-menu mr-2" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              </ul>
+              {% else %}
+             <!--button trigger modal login-->
+            <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+              Login
+            </button>
+             <!-- Button trigger signup modal -->
+          <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#signupModal">
+          SignUP
+          </button>  
+          {% endif %}
+          </div>
+        </div>
+      </nav>
+
+      <!--login  Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login Here</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action='/login' method='post'>{% csrf_token %}
+            <div class="mb-3">
+              <label for="username" class="form-label">UserName</label>
+              <input type="text" class="form-control a" id="loginusername" name="loginusername" placeholder="your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="pass" class="form-label">Password</label>
+              <input type="password" class="form-control a" id="loginpassword" name="loginpassword" placeholder="Enter Your Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+        </div>
+        <div class="modal-footer">
+         </div>
+      </div>
+    </div>
+  </div>
+   <!--sign up Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signupModalLabel">SignUp Here</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action='/signup' method='post'>
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="username" class="form-label">UserName</label>
+            <input type="text" class="form-control a" id="username" name="username" placeholder="user name" required>
+          </div>
+          <div class="mb-3">
+            <label for="fname" class="form-label">First Name</label>
+            <input type="text" class="form-control a" id="fname" name="fname" placeholder="first name" required>
+          </div>
+          <div class="mb-3">
+            <label for="lname" class="form-label">Last Name</label>
+            <input type="text" class="form-control a" id="lname"  name="lname" placeholder="last name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control a" id="email" name="email" placeholder="name@example.com" required>
+          </div>
+          <div class="mb-3">
+            <label for="pass1" class="form-label">Password</label>
+            <input type="password" class="form-control a" id="pass1" name="pass1" placeholder="choose Your Password" required>
+          </div>
+          <div class="mb-3">
+            <label for="pass2" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control a" id="pass2" name="pass2" placeholder="Confirm Your Password" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- {% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+  <strong> {{ message }}</strong> 
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+{% endif %} -->
+{% block body %}{% endblock body %}
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    
+  </body>
+</html>

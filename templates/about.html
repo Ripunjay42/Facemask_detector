@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% block title %}about{% endblock title %}
+{% block head %}
+<style>
+    .h2{
+        font-size: 100px;
+        font-weight:bolder;
+        text-align:left;
+        color:aqua;
+        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+        text-decoration:solid;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .para2{
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-top: 20px;
+     padding-bottom: 10px;
+     border-style:solid;
+     border-color:#fff;
+     border-width: 20px;
+     background-color: rgb(8, 22, 0);
+     width: 100%;
+     top: 50%;
+     color:#fff;
+    }
+    .cont2{
+    padding-top:50px;
+    position:absolute;
+    top: 48%;
+    transform: translateY(-50%);
+    color:#fff;
+    padding-left: 1270px;
+    }
+    .h{
+        font-size: 100px;
+        font-weight:bolder;
+        text-align:center;
+        color:aqua;
+        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+        text-decoration:solid;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .para{
+     padding-left: 20px;
+     padding-right: 20px;
+     padding-top: 20px;
+     padding-bottom: 10px;
+     border-style:solid;
+     border-color:#fff;
+     border-width: 20px;
+     background-color: rgb(8, 22, 0);
+     width: 100%;
+     top: 50%;
+     color:aqua;
+     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    .cont{
+    padding-top:50px;
+    position:absolute;
+    top: 53%;
+    transform: translateY(-50%);
+    color:#fff;
+    padding-left: 70px;
+    }
+    button{
+    width: 150px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    position: relative;
+    }
+    span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+    }
+    button:hover span{
+        width: 100%;
+    }
+    button:hover span{
+        border: none;
+    }
+    .img1{
+        padding-top: 145px;
+        padding-right: 30px;
+        padding-left: 0px;
+        padding-bottom: 125px;
+    }
+    </style>
+    {% endblock head %}
+    {% block body %}
+    <div class="banner">
+        <div class="cont">
+            <div class="h">
+                <h1>ABOUT PROJECT</h1>
+            </div>
+            <div class="para">
+                <P1 style="font-size: 20px;">DESCRIPTION<br></P1>
+                <p2 style="padding-left: 40px;">The project is called the Face Mask Detection where it uses facial and object recognition to accurately distinguish those with or without masks.<br>
+                    The program will use a device (e.g. webcam, camera etc.) through which it will detect whether the person or the persons are wearing face masks or not.<br>
+                    If it detects a person without face mask then it will capture an image and store it into the database. This project is needed to prevent higher risk of<br>
+                    spreading the coronavirus and to enforce those who don't follow proper guidelines to wear a mask.<br><br></p2>
+                <p3 style="font-size: 20px;">FEATURES<br></p3>
+                <p4><ul>
+                    <li>Python</li>
+                    <li>Deep Learning</li>
+                    <li>Tensorflow</li>
+                    <li>Keras</li>
+                    <li>APIs</li></ul>
+                </p4>
+                <p5 style="font-size: 20px;">IMPORTANCE<br></p5>
+                <p6 style="padding-left: 40px;">Wearing a facial mask in public has become a mandatory requirement since the start of COVID-19. They’re important in public space <br>
+                (ex. stadiums, airports, warehouses, and other crowded spaces) where foot traffic is heavy and safety regulations are critical to safeguarding<br>
+                everyone’s health.<br><br></p6>
+                <p7 style="font-size: 20px;">PROBLEM & SOLUTION<br></p7>
+                <p8><ul>
+                    <li>Problem: There are people who don’t follow the proper guidelines and thus, create a higher risk of spreading this contagious virus.</li>
+                    <li>Solution: Thus, we need to find a solution to figure out how to detect those who don’t wear and mask and enforce them to put one on. This<br>
+                         program will analyze images and/or videos of faces and will say whether or not they’re wearing a mask. It will be able to accurately <br>
+                         distinguish those with or without masks.</li>
+                </ul></p8>
+                <p9 style="font-size: 20px; font-weight: bolder; color: brown;">PROJECT BY:<br></p9>
+                <p10><ul>
+                    <li>Ripunjay Choudhury (+91-9127433184)</li>
+                    <li>Pijush sarma (+91-7002819929)</li>
+                    <li>Nishanta Kakati (+91-6003644157)</li>
+                </ul></p10>
+            </div>
+            <div>
+                <a href="/admin"><button type="button"><span></span>ADMIN</button></a>
+            </div>
+        </div>
+        <div class="cont2">
+            <div class="h2">
+                <h1>PROJECT GUIDE</h1>
+            </div>
+            <div class="para2">
+                <p1 style="font-size: 20px; color:brown; font-weight: bolder;">RESPECTED :<br></p1>
+                <p><ul style="color:chartreuse">
+                    <li>Prity Prakash Deva Sarma</li>
+                    <li>Department  : Computer Science</li>
+                    <li>Designation : Assistant Professor</li>
+                    <li>email       : ppdsmail@gmail.com</li>
+                    <div class="img1">
+                        <img src="/static/img/expert.png" alt="expert">
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    {% endblock body %}

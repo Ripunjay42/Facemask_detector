@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}contact{% endblock title %}
+{% block head %}
+<style>
+    .form-lab{
+        color:chartreuse;
+        font-size: 20px;
+        font-weight: lighter;
+    }
+    .sbutton{
+    width: 100px;
+    background: chartreuse;
+    padding: 8px;
+    text-align: center;
+    margin: 10px 0px;
+    border-radius: 10px;
+    font-weight:bolder;
+    border: 2px solid #009688;
+    color:black;
+    cursor:pointer;
+    position: relative;
+}
+input[class="form-control"], textarea[class="form-control"] {
+background-color:rgb(204, 233, 210);
+}
+</style>
+{% endblock head %}
+
+{% block contactactive %} active {% endblock contactactive %}
+
+{% block body %}
+    <!-- <div class="container-fluid px-0 mb-3">
+        <img src="https://source.unsplash.com/1200x400/?phone,contact" class="d-block w-100 mx-0" alt="...">
+    </div> -->
+    <div class="banner">
+    <div class="container" mb-3 py-4>
+        <h1 class="text-center"> CONTACT US </h1>
+        <form method="post" action="/contact">
+        {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-lab">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-lab">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-lab">Phone Number</label>
+                <input type="phone" class="form-control" id="phone" name="phone" placeholder="Contact No:">
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-lab">Dexcription</label>
+                <textarea class="form-control" id="desc" rows="3" name="desc" placeholder="describe"></textarea>
+            </div>
+            <button class="sbutton" type="Submit">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock body %}
