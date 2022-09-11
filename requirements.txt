@@ -28,7 +28,7 @@ grpcio==1.43.0
 gunicorn==20.1.0
 h11==0.12.0
 h5py==3.6.0
-heroku==0.1.4
+heroku
 idna==3.3
 importlib-metadata==4.10.0
 imutils==0.5.3
