@@ -50,8 +50,7 @@ mss==6.1.0
 multiaddr==0.0.9
 netaddr==0.8.0
 numpy==1.18.2
-oauthlib==3.1.1
-opencv-python-headless==4.2.0.32
+opencv-python==4.5.4.58
 opt-einsum==3.3.0
 outcome==1.1.0
 Pillow==9.0.0
