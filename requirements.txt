@@ -35,7 +35,7 @@ imutils==0.5.3
 ipfshttpclient==0.7.0
 isort==5.7.0
 joblib==1.1.0
-Keras==2.3.1
+Keras
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 keyboard==0.13.5
