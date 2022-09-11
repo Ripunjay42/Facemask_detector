@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-#an*zm00p!arj)1**-$00j+i!yt%(wwf!=8_8n)l*g+&i0j6sl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','ripun42-facemaskdetector.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','localhost','rj42facemaskdetector.herokuapp.com']
 
 
 # Application definition
