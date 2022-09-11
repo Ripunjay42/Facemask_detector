@@ -34,7 +34,7 @@ imutils==0.5.3
 ipfshttpclient==0.7.0
 isort==5.7.0
 joblib==1.1.0
-Keras==2.3.1
+Keras
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.2
 keyboard==0.13.5
@@ -95,7 +95,7 @@ trio==0.19.0
 trio-websocket==0.9.2
 typing_extensions==4.0.1
 tzdata==2021.5
-urllib3==1.26.7
+urllib3
 varint==1.0.2
 virtualenv==20.10.0
 Werkzeug==2.0.2
