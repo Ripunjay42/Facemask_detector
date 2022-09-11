@@ -101,4 +101,3 @@ Werkzeug==2.0.2
 whitenoise==6.2.0
 wrapt==1.12.1
 wsproto==1.0.0
-zipp==3.6.0
