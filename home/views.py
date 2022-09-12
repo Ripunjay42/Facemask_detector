@@ -137,7 +137,7 @@ def capture_feed(request):
             if keyboard.is_pressed('q'):
                  break
             else:
-                image = ImageGrab.grab(bbox=(620,300,1290,820))
+                image = ImageGrab.grab(bbox=(480,160,1440,890))
                 # image = cv2.cvtColor(np.array(image),
                 #             cv2.COLOR_RGB2BGR)
                 # path = r"C:\Users\RIPUN_PRO\Desktop\project\hello\images"

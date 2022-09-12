@@ -43,6 +43,12 @@
         font-weight: bolder;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       }
+      .center {
+       display: block;
+        margin-left: auto;
+         margin-right: auto;
+         width:50%;
+      }
       /* .img1{
         padding-left: 100px;
         padding-top: 20px;
@@ -79,7 +85,7 @@
         </div>   -->
       <div class="frame">
             <h1>Video Live Stream</h1>
-            <img src="{% url 'mask_feed' %}">
+            <img src="{% url 'mask_feed' %}" class="center">
         <div>
             <form action='/cap' method="post">{%csrf_token%}
               <a href='/logout'><button type="button"><span></span>EXIT</button></a>
