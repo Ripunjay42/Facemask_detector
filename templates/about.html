@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block title %}about{% endblock title %}
-{% block head %}
+{% block head %} 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    .h2{
+    /* .h2{
         font-size: 100px;
         font-weight:bolder;
         text-align:left;
         color:aqua;
-        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         text-decoration:solid;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
@@ -31,13 +32,13 @@
     transform: translateY(-50%);
     color:#fff;
     padding-left: 1270px;
-    }
+    } */
     .h{
         font-size: 100px;
         font-weight:bolder;
         text-align:center;
         color:aqua;
-        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
         text-decoration:solid;
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
@@ -53,16 +54,21 @@
      width: 100%;
      top: 50%;
      color:aqua;
-     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    .cont{
-    padding-top:50px;
-    position:absolute;
-    top: 53%;
-    transform: translateY(-50%);
-    color:#fff;
-    padding-left: 70px;
-    }
+    .content1{
+        padding-top:1100px;
+        position:absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        color:#fff;
+        width: 100%;
+        text-align:left;
+        color:#fff;
+       }
+        .content1 h1{
+            font-size: 40px;
+            color: blue;
+        }
     button{
     width: 150px;
     padding: 15px 0;
@@ -72,13 +78,14 @@
     font-weight: bold;
     border: 2px solid #009688;
     background: transparent;
-    color: #fff;
+    color:greenyellow;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     position: relative;
+    background-color: black;
     }
-    span{
+    /* span{
     background: #009688;
     height: 100%;
     width: 0;
@@ -94,18 +101,15 @@
     }
     button:hover span{
         border: none;
-    }
-    .img1{
-        padding-top: 145px;
-        padding-right: 30px;
-        padding-left: 0px;
-        padding-bottom: 125px;
-    }
+    } */
     </style>
     {% endblock head %}
+
+    {% block contactactive %} active {% endblock contactactive %}
+    
     {% block body %}
     <div class="banner">
-        <div class="cont">
+        <div class="content1">
             <div class="h">
                 <h1>ABOUT PROJECT</h1>
             </div>
@@ -140,12 +144,19 @@
                     <li>Pijush sarma (+91-7002819929)</li>
                     <li>Nishanta Kakati (+91-6003644157)</li>
                 </ul></p10>
-            </div>
-            <div>
-                <a href="/admin"><button type="button"><span></span>ADMIN</button></a>
+                <p11 style="font-size: 20px; color:brown; font-weight: bolder;">PROJECT GUIDE:<br></p11>
+                <p12><ul style="color:chartreuse">
+                    <li>Prity Prakash Deva Sarma</li>
+                    <li>Department  : Computer Science</li>
+                    <li>Designation : Assistant Professor</li>
+                    <li>email       : ppdsmail@gmail.com</li>
+                </ul></p12>
+                <div>
+                    <a href="/admin"><button type="button"><span></span>ADMIN</button></a>
+                </div>
             </div>
         </div>
-        <div class="cont2">
+        <!-- <div class="content2">
             <div class="h2">
                 <h1>PROJECT GUIDE</h1>
             </div>
@@ -157,10 +168,10 @@
                     <li>Designation : Assistant Professor</li>
                     <li>email       : ppdsmail@gmail.com</li>
                     <div class="img1">
-                        <img src="/static/img/expert.png" alt="expert">
+                        <img src="/static1/img/expert.png" alt="expert">
                     </div>
                 </p>
             </div>
-        </div>
+        </div> -->
     </div>
     {% endblock body %}

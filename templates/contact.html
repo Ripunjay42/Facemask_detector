@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}contact{% endblock title %}
 {% block head %}
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     .form-lab{
         color:chartreuse;
@@ -20,6 +21,14 @@
     cursor:pointer;
     position: relative;
 }
+.container{
+    padding-top:1rem;
+    position:absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    color:#fff;
+    padding-left:1rem;
+    }
 input[class="form-control"], textarea[class="form-control"] {
 background-color:rgb(204, 233, 210);
 }
@@ -32,8 +41,8 @@ background-color:rgb(204, 233, 210);
     <!-- <div class="container-fluid px-0 mb-3">
         <img src="https://source.unsplash.com/1200x400/?phone,contact" class="d-block w-100 mx-0" alt="...">
     </div> -->
-    <div class="banner">
-    <div class="container" mb-3 py-4>
+<div class="banner">
+    <div  class=container mb-3 py-4>
         <h1 class="text-center"> CONTACT US </h1>
         <form method="post" action="/contact">
         {% csrf_token %}
