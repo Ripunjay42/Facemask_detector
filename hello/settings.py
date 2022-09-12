@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-#an*zm00p!arj)1**-$00j+i!yt%(wwf!=8_8n)l*g+&i0j6sl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost','rj42facemaskdetector.herokuapp.com']
+ALLOWED_HOSTS = ['rj42facemaskdetector.herokuapp.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -121,16 +121,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL= '/static1/'
 MEDIA_URL ='/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static1')
+
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
