@@ -10,6 +10,6 @@
 2. Pijush Sarma (US-191-023-0034)
 3. Nishanta Kakati (US-191-023-0032) https://spidernishanta.github.io/
 
-#Sample Screenshots:-
+#DEMO Screenshots:-
 
   https://drive.google.com/drive/folders/16e4vVclG_VGmullu36Jjv7UXbqHZi7ZJ?usp=sharing
