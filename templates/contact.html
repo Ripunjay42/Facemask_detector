@@ -3,6 +3,17 @@
 {% block head %}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+    .banner{
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../static/img/mm2.jpg);
+                background-size: cover;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
     .form-lab{
         color:chartreuse;
         font-size: 20px;
@@ -26,9 +37,12 @@
     position:absolute;
     top: 40%;
     transform: translateY(-50%);
-    color:#fff;
     padding-left:1rem;
     }
+.container h1{
+    font-size: 40px;
+    color: aqua;
+}
 input[class="form-control"], textarea[class="form-control"] {
 background-color:rgb(204, 233, 210);
 }

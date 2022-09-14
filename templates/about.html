@@ -3,60 +3,33 @@
 {% block head %} 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    /* .h2{
-        font-size: 100px;
-        font-weight:bolder;
-        text-align:left;
-        color:aqua;
-        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        text-decoration:solid;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
-    .para2{
-     padding-left: 20px;
-     padding-right: 20px;
-     padding-top: 20px;
-     padding-bottom: 10px;
-     border-style:solid;
-     border-color:#fff;
-     border-width: 20px;
-     background-color: rgb(8, 22, 0);
-     width: 100%;
-     top: 50%;
-     color:#fff;
-    }
-    .cont2{
-    padding-top:50px;
-    position:absolute;
-    top: 48%;
-    transform: translateY(-50%);
-    color:#fff;
-    padding-left: 1270px;
-    } */
-    .h{
-        font-size: 100px;
-        font-weight:bolder;
-        text-align:center;
-        color:aqua;
-        /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
-        text-decoration:solid;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    .banner{
+    display: block;
+	position: absolute;
+    width: 100%;
+	height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(static/img/mm2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     }
     .para{
-     padding-left: 20px;
+     /* padding-left: 20px;
      padding-right: 20px;
      padding-top: 20px;
-     padding-bottom: 10px;
-     border-style:solid;
-     border-color:#fff;
-     border-width: 20px;
+     /* padding-bottom: 10px; */
+     /* border-style:solid;
+     border-color:#fff; */
+     /* border-width: 20px; */
      background-color: rgb(8, 22, 0);
      width: 100%;
-     top: 50%;
+     /* top: 50%; */
      color:aqua;
+     text-align: center;
     }
     .content1{
-        padding-top:1100px;
+        padding-top:750px;
         position:absolute;
         transform: translateY(-50%);
         top: 50%;
@@ -66,15 +39,16 @@
         color:#fff;
        }
         .content1 h1{
-            font-size: 40px;
-            color: blue;
+            text-align: center;
+            font-size: 30px;
+            color:rgb(0, 255, 76);
         }
     button{
-    width: 150px;
+    width: 100px;
     padding: 15px 0;
     text-align: center;
     margin: 20px 10px;
-    border-radius: 25px;
+    border-radius: 20px;
     font-weight: bold;
     border: 2px solid #009688;
     background: transparent;

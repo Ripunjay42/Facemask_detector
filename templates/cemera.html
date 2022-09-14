@@ -14,21 +14,44 @@
 			  position: absolute;
 			  width: 100%;
 			  height: 100%;
-        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(/static1/img/mm2.jpg);
+        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(/static/img/mm2.jpg);
         background-size: cover;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
-    }
-      .img1{
-        padding-left: 200px;
-        padding-top: 20px;
-        padding-bottom: 20px;
-      }
-      .img2{
-        padding-left: 1200px;
-        padding-top: 120px;
-      }
+        }
+        button{
+    width: 100px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover span{
+    border: none;
+}
+
       /* .content h1{
           color: aqua;
           font-weight: bolder;
@@ -44,12 +67,13 @@
        }
         .content h1{
             font-size: 40px;
+            color:firebrick;
         }
-        .content p{
+        /* .content p{
           color:firebrick;
           font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
           font-size: 20px ;
-        }
+        } */
     </style>
     <title>{% block title %}{% endblock title %}facemask</title>
   </head>
@@ -57,10 +81,10 @@
     <div class="banner">
     <nav class="navbar navbar-expand-sm navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" style="color:rgb(104, 236, 43);font-size: x-large;"href="#">FACEMASK DETECTION</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand" style="color:rgb(104, 236, 43);font-size: 20px;"href="#">FACEMASK DETECT</a>
+          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+          </button> -->
             <!-- <li class="nav-item dropdown mr-2">
               <a class="nav-li dropdown-toggle" style="color:rgb(104, 236, 43);font-size: larger;"href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Welcome {{request.user}}
