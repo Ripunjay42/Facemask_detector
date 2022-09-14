@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-#an*zm00p!arj)1**-$00j+i!yt%(wwf!=8_8n)l*g+&i0j6sl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['rj42facemaskdetector.herokuapp.com','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -123,6 +123,7 @@ USE_TZ = True
 
 STATIC_URL= '/static1/'
 MEDIA_URL ='/media/'
+STATIC_URL='/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
@@ -134,7 +135,7 @@ STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#added manually
+# added manually
 STATICFILES_DIRS = [
     BASE_DIR , "static",
 ]
