@@ -6,9 +6,9 @@
 3. Tools/ Technologies used : HTML, CSS, Javascript, Python, SQLite3.
 
 #Developers:-
-1. Ripunjay Choudhury (US-191-023-0042) https://ripunjay-code.netlify.app/
+1. Ripunjay Choudhury (US-191-023-0042) https://ripunjay-code.netlify.app
 2. Pijush Sarma (US-191-023-0034)
-3. Nishanta Kakati (US-191-023-0032) https://spidernishanta.github.io/
+3. Nishanta Kakati (US-191-023-0032) https://spidernishanta.github.io
 
 #DEMO Screenshots:-
 
