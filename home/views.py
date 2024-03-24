@@ -10,9 +10,9 @@ from django.conf import settings
 from django.contrib.auth.models import User
 import numpy as np
 from PIL import ImageGrab
-import cv2
+# import cv2
 import time
-import pyautogui
+# import pyautogui
 import random
 import os
 import keyboard
@@ -84,7 +84,7 @@ def handlelogin(request):
         if user is not None:
             login(request, user)
             #messages.success(request, "Successfully Logged In")
-            return render(request,"cemera.html")
+            return render(request,"img.html")
             #return render("exit")
         else:
             messages.error(request, "Invalid credentials! Please try again")

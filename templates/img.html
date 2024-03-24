@@ -95,7 +95,7 @@ button:hover span{
     <div class="banner">
       <nav class="navbar navbar-expand-sm navbar-light">
         <div class="container-fluid">
-          <a class="navbar-brand" style="color:rgb(104, 236, 43);font-size:20px;" href="#">FACEMASK DETECT</a>
+          <img src="../static/img/logo.png" height="100px" width="100px" alt="FaceMask">
           <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button> -->
@@ -120,7 +120,7 @@ button:hover span{
         <div>
             <form action='/cap' method="post">{%csrf_token%}
               <a href='/logout'><button type="button"><span></span>EXIT</button></a>
-              <button type="submit"><span></span>capture</button>
+              {% comment %} <button type="submit"><span></span>capture</button> {% endcomment %}
             </form>
             <form action='/gal' method="post">{%csrf_token%}
               <a href="/gal"><button type="submit"><span></span>gallery</button></a>

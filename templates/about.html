@@ -4,81 +4,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     .banner{
-    display: block;
-	position: absolute;
-    width: 100%;
-	height: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(static/img/mm2.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    }
-    .para{
-     /* padding-left: 20px;
-     padding-right: 20px;
-     padding-top: 20px;
-     /* padding-bottom: 10px; */
-     /* border-style:solid;
-     border-color:#fff; */
-     /* border-width: 20px; */
-     background-color: rgb(8, 22, 0);
-     width: 100%;
-     /* top: 50%; */
-     color:aqua;
-     text-align:center;
-    }
-    .ce{
-        text-align: center;
+        background-image: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)), url(static/img/mm2.jpg);
+        justify-content: flex-start;
+        background-size: cover;
+        background-position: center;
+        overflow-y: auto;
     }
     .content1{
-        padding-top:750px;
-        position:absolute;
-        transform: translateY(-50%);
-        top: 50%;
-        color:#fff;
         width: 100%;
-        text-align:center;
-        color:#fff;
+        background:transparent;
+        margin-top:2%;
        }
-        .content1 h1{
-            text-align: center;
-            font-size: 30px;
-            color:rgb(0, 255, 76);
-        }
-    button{
-    width: 100px;
-    padding: 15px 0;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 20px;
-    font-weight: bold;
-    border: 2px solid #009688;
-    background: transparent;
-    color:greenyellow;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    position: relative;
-    background-color: black;
+    .content1 h1{
+        text-align: center;
+        font-size: 30px;
+        color:aqua;
     }
-    /* span{
-    background: #009688;
-    height: 100%;
-    width: 0;
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-    transition: 0.5s;
-    }
-    button:hover span{
+    .para{
+        padding-right: 20px;
+        padding-top: 20px;
+        background-color: transparent;
         width: 100%;
+        color:bisque;
+        text-align:center; 
     }
-    button:hover span{
-        border: none;
-    } */
+    .para li{
+        displa:flex;
+    }
+    button{
+        width: 100px;
+        padding: 15px 0;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 20px;
+        font-weight: bold;
+        border: 2px solid #009688;
+        background: transparent;
+        color:greenyellow;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        position: relative;
+        background-color: black;
+    }
     </style>
     {% endblock head %}
 
@@ -97,58 +65,48 @@
                     If it detects a person without face mask then it will capture an image and store it into the database. This project is needed to prevent higher risk of<br>
                     spreading the coronavirus and to enforce those who don't follow proper guidelines to wear a mask.<br><br></p2>
                 <p3 style="font-size: 20px;">FEATURES<br></p3>
-                <p4><ul style="list-style-type: none ;">
-                    <li>Python</li>
-                    <li>Deep Learning</li>
-                    <li>Tensorflow</li>
-                    <li>Keras</li>
-                    <li>APIs</li></ul>
-                </p4>
+                <div class="l1">
+                        <p>Python
+                        <br>Deep Learning
+                        <br>Tensorflow
+                        <br>Keras
+                        <br>APIs
+                    </p>
+                </div>
                 <p5 style="font-size: 20px;">IMPORTANCE<br></p5>
                 <p6 style="padding-left: 40px;">Wearing a facial mask in public has become a mandatory requirement since the start of COVID-19. They’re important in public space <br>
                 (ex. stadiums, airports, warehouses, and other crowded spaces) where foot traffic is heavy and safety regulations are critical to safeguarding<br>
                 everyone’s health.<br><br></p6>
+                <div class="l1">
                 <p7 style="font-size: 20px;">PROBLEM & SOLUTION<br></p7>
-                <p8><ul style="list-style-type: none ;">
-                    <li>Problem: There are people who don’t follow the proper guidelines and thus, create a higher risk of spreading this contagious virus.</li>
-                    <li>Solution: Thus, we need to find a solution to figure out how to detect those who don’t wear and mask and enforce them to put one on. This<br>
-                         program will analyze images and/or videos of faces and will say whether or not they’re wearing a mask. It will be able to accurately <br>
-                         distinguish those with or without masks.</li>
-                </ul></p8>
-                <p9 style="font-size: 20px; font-weight: bolder; color: brown;">PROJECT BY:<br></p9>
-                <p10><ul style="list-style-type: none ;">
-                    <li>Ripunjay Choudhury (+91-9127433184)</li>
-                    <li>Pijush sarma (+91-7002819929)</li>
-                    <li>Nishanta Kakati (+91-6003644157)</li>
-                </ul></p10>
+                    <p8>
+                        Problem: There are people who don’t follow the proper guidelines and thus, create a higher risk of spreading this contagious virus.<br>
+                        Solution: Thus, we need to find a solution to figure out how to detect those who don’t wear and mask and enforce them to put one on. This<br>
+                        program will analyze images and/or videos of faces and will say whether or not they’re wearing a mask. It will be able to accurately <br>
+                        distinguish those with or without masks.<br><br>
+                    </p8>
+                </div>
+                <div class="l1">
+                    <p9 style="font-size: 20px; font-weight: bolder; color: brown;">PROJECT BY:<br></p9>
+                    <p10>
+                        Ripunjay Choudhury (+91-9127433184)<br>
+                        Pijush sarma (+91-7002819929)<br>
+                        Nishanta Kakati (+91-6003644157)<br><br>
+                    </p10>
+                </div>
+                <div class="l1">
                 <p11 style="font-size: 20px; color:brown; font-weight: bolder;">PROJECT GUIDE:<br></p11>
-                <p12><ul style="color:chartreuse; list-style-type: none ;">
-                    <li>Prity Prakash Deva Sarma</li>
-                    <li>Department  : Computer Science</li>
-                    <li>Designation : Assistant Professor</li>
-                    <li>email       : ppdsmail@gmail.com</li>
+                <p12>
+                    Prity Prakash Deva Sarma<br>
+                    Department  : Computer Science<br>
+                    Designation : Assistant Professor<br>
+                    email       : ppdsmail@gmail.com<br>
                 </ul></p12>
+                <div class="l1">
                 <div>
                     <a href="/admin"><button type="button"><span></span>ADMIN</button></a>
                 </div>
-            </div>
+            </di>
         </div>
-        <!-- <div class="content2">
-            <div class="h2">
-                <h1>PROJECT GUIDE</h1>
-            </div>
-            <div class="para2">
-                <p1 style="font-size: 20px; color:brown; font-weight: bolder;">RESPECTED :<br></p1>
-                <p><ul style="color:chartreuse">
-                    <li>Prity Prakash Deva Sarma</li>
-                    <li>Department  : Computer Science</li>
-                    <li>Designation : Assistant Professor</li>
-                    <li>email       : ppdsmail@gmail.com</li>
-                    <div class="img1">
-                        <img src="/static1/img/expert.png" alt="expert">
-                    </div>
-                </p>
-            </div>
-        </div> -->
     </div>
     {% endblock body %}
