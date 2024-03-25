@@ -115,22 +115,10 @@ def  handleimage(request):
     return HttpResponse("404 - Not found")
 
 def gen(camera):
-    while True:
-        # Get frame from the camera
-        frame = camera.get_frame()
-
-        # Process the frame using OpenCV
-        # For example, you can apply some image processing algorithm
-        # Here's just an example of flipping the frame horizontally
-        frame = cv2.flip(frame, 1)
-
-        # Convert the frame to JPEG format for streaming
-        _, jpeg = cv2.imencode('.jpg', frame)
-        frame_bytes = jpeg.tobytes()
-
-        # Yield the frame
-        yield (b'--frame\r\n'
-               b'Content-Type: image/jpeg\r\n\r\n' + frame_bytes + b'\r\n\r\n')
+	while True:
+		frame = camera.get_frame()
+		yield (b'--frame\r\n'
+				b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 def video_feed(request):
 	return StreamingHttpResponse(gen(VideoCamera()),

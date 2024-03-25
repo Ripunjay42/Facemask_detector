@@ -113,11 +113,11 @@ button:hover span{
         </div>   -->
       <div class="frame" id="video-container">
             <h1>Video Live Stream</h1>
-            <img src="{% url 'mask_feed' %}" class="center" id="webcamFeed" autoplay>
-            {% comment %} <video id="webcamFeed" autoplay></video> {% endcomment %}
+            <img src="{% url 'mask_feed' %}" class="center" id="webcamFeed">
+            {% comment %} <video src="{% url 'mask_feed' %}" id="webcamFeed" autoplay></video> {% endcomment %}
         <div>
           <form>
-              <a><button type="button" id="startButton"><span></span>enable cam</button></a>
+              {% comment %} <a><button type="button" id="startButton"><span></span>enable cam</button></a> {% endcomment %}
             {% comment %} <button type="submit"><span></span>capture</button> {% endcomment %}
           </form>
             <form action='/cap' method="post">{% csrf_token %}
@@ -193,7 +193,7 @@ button:hover span{
           }
         }); {% endcomment %}
         
-        async function startWebcamStream() {
+        sync function startWebcamStream() {
           try {
               // Get access to the webcam
               const stream = await navigator.mediaDevices.getUserMedia({ video: true });
