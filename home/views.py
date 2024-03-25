@@ -17,6 +17,7 @@ import random
 import os
 import keyboard
 import base64
+from django.views.decorators.csrf import csrf_protect
 # Create your views here.
 def home(request):
     #context={"var1":"ripunjay is great"}
@@ -27,6 +28,7 @@ def home(request):
 def about(request):
     return render(request,'about.html')
     #return HttpResponse("about")
+@csrf_protect
 def contact(request):
     if request.method == "POST" :
         name=request.POST.get('name')
@@ -41,6 +43,7 @@ def contact(request):
             messages.success(request, 'your message has been sent!')
     return render(request,'contact.html')
     #return HttpResponse("u can contact us")
+@csrf_protect
 def signup(request):
     if request.method=="POST":
         # Get the post parameters
@@ -72,7 +75,8 @@ def signup(request):
         return redirect('home')
 
     else:
-        return HttpResponse("404 - Not found")      
+        return HttpResponse("404 - Not found")
+@csrf_protect      
 def handlelogin(request):
     #return render(request,'login.html')
     if request.method=="POST":
@@ -102,6 +106,7 @@ def handlelogout(request):
     #return redirect('home')
     return render(request,'home.html')
 
+@csrf_protect
 def  handleimage(request):
     if request.method=="POST":
             return render(request, 'img.html')
@@ -131,6 +136,8 @@ def mask_feed(request):
 def livecam_feed(request):
 	return StreamingHttpResponse(gen(LiveWebCam()),
 					content_type='multipart/x-mixed-replace; boundary=frame')
+
+@csrf_protect
 def capture_feed(request):
     if request.method == "POST":
         for i in range(0,1000):
@@ -154,6 +161,8 @@ def capture_feed(request):
                 time.sleep(5)
         return render(request, 'img.html')
     return HttpResponse("404 - Not found")
+
+@csrf_protect
 def gallery(request):
     if request.method == "POST":
         obj = Image.objects.get(id=16)
