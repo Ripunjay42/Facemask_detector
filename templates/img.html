@@ -114,10 +114,14 @@ button:hover span{
         <div class="img2">
           <img src="/static1/img/maskdetection.png" alt="mask">
         </div>   -->
-      <div class="frame">
+      <div class="frame" id="video-container">
             <h1>Video Live Stream</h1>
-            <img src="{% url 'mask_feed' %}" class="center">
+            <video src="{% url 'mask_feed' %}" class="center" id="video"></video>
         <div>
+          <form>
+              <a><button type="button" id="startButton"><span></span>enable cam</button></a>
+            {% comment %} <button type="submit"><span></span>capture</button> {% endcomment %}
+          </form>
             <form action='/cap' method="post">{% csrf_token %}
               <a href='/logout'><button type="button"><span></span>EXIT</button></a>
               {% comment %} <button type="submit"><span></span>capture</button> {% endcomment %}
@@ -164,5 +168,23 @@ button:hover span{
               }
           });
        </script>
+       <script>
+        const startButton = document.getElementById('startButton');
+        const videoContainer = document.getElementById('video-container');
+        const video = document.getElementById('video');
+    
+        startButton.addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                video.srcObject = stream;
+                video.play();
+                videoContainer.style.display = 'block'; // Show video element
+                startButton.style.display = 'none'; // Hide the start button
+            } catch (error) {
+                console.error('Error accessing webcam:', error);
+                alert('Error accessing webcam. Please make sure it is enabled.');
+            }
+        });
+    </script>
     </body>
   </html>
