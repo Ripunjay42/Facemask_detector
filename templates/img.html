@@ -51,14 +51,12 @@ button:hover span{
 button:hover span{
     border: none;
 }
-    .frame{
-          width: 100%;
-          position:absolute;
-          top:50%;
-          transform: translateY(-50%);
-          text-align: center;
-          color:#fff;
-       }
+.frame{
+    width: 100%;
+    position:absolute;
+    text-align: center;
+    color:#fff;
+}
       /* /* .content{
         width: 100%;
         position: absolute;
@@ -115,7 +113,7 @@ button:hover span{
         </div>   -->
       <div class="frame" id="video-container">
             <h1>Video Live Stream</h1>
-            <img src="{% url 'mask_feed' %}" class="center" id="video">
+            <img src="{% url 'mask_feed' %}" class="center" id="webcamFeed">
         <div>
           <form>
               <a><button type="button" id="startButton"><span></span>enable cam</button></a>
@@ -172,10 +170,13 @@ button:hover span{
       <script>
         const enableWebcamBtn = document.getElementById('startButton');
         const disableWebcamBtn = document.getElementById('startButton');
+        const webcamFeed = document.getElementById('webcamFeed');
+
         
         enableWebcamBtn.addEventListener('click', async () => {
           try {
             const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            webcamFeed.srcObject = stream;
           } catch (err) {
             console.error('Error accessing webcam:', err);
             alert('Could not access webcam. Please check your device settings.');
@@ -186,6 +187,7 @@ button:hover span{
           if (stream) {
             const tracks = stream.getTracks();
             tracks.forEach(track => track.stop());
+            webcamFeed.srcObject = stream;
           }
         });
       </script>
