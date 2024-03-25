@@ -113,7 +113,8 @@ button:hover span{
         </div>   -->
       <div class="frame" id="video-container">
             <h1>Video Live Stream</h1>
-            <img src="{% url 'mask_feed' %}" class="center" id="webcamFeed">
+            <img src="{% url 'mask_feed' %}" class="center" id="webcamFeed" autoplay>
+            {% comment %} <video id="webcamFeed" autoplay></video> {% endcomment %}
         <div>
           <form>
               <a><button type="button" id="startButton"><span></span>enable cam</button></a>
@@ -168,7 +169,7 @@ button:hover span{
        
 
       <script>
-        let stream;
+        {% comment %} let stream;
 
         const enableWebcamBtn = document.getElementById('startButton');
         const disableWebcamBtn = document.getElementById('stopButton');
@@ -190,8 +191,23 @@ button:hover span{
             tracks.forEach(track => track.stop());
             webcamFeed.srcObject = null;
           }
-        });
+        }); {% endcomment %}
         
+        async function startWebcamStream() {
+          try {
+              // Get access to the webcam
+              const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+              
+              // Set the video element's srcObject to the stream
+              const videoElement = document.getElementById('webcamFeed');
+              videoElement.srcObject = stream;
+          } catch (error) {
+              console.error('Error accessing the webcam:', error);
+          }
+      }
+
+      // Call the function to start streaming when the page loads
+      window.onload = startWebcamStream;
       </script>
     </body>
   </html>
