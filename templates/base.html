@@ -12,12 +12,12 @@
     <style>
       button{
     width: 100px;
-    padding: 15px 0;
+    height:45px;
     text-align: center;
     margin: 20px 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-weight: bold;
-    border: 2px solid #009688;
+    border: 1px solid green;
     background: transparent;
     color: #fff;
     cursor: pointer;
@@ -25,10 +25,10 @@
     overflow: hidden;
 }
 span{
-    background: #009688;
+    background: greem;
     height: 100%;
     width: 0;
-    border-radius: 20px;
+    border-radius: 10px;
     position: absolute;
     left: 0;
     bottom: 0;
@@ -36,6 +36,8 @@ span{
     transition: 0.5s;
 }
 button:hover span{
+    box-shadow: rgba(0, 0, 0, 0.815) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
     width: 100%;
 }
 button:hover span{
