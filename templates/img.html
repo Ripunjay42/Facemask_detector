@@ -11,18 +11,17 @@
     <title>{% block title %}{% endblock title %}video live stream</title>
     <style>
       .banner{
-			  display: block;
-			  position: absolute;
+        position: absolute;
 			  width: 100%;
 			  height: 100%;
-        background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../static1/img/mm2.jpg);
+        background-image: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)), url(../static1/img/mm2.jpg);
         background-size: cover;
-        background-attachment: fixed;
         background-position: center;
-        background-repeat: no-repeat;
+        overflow-y: auto;
     }
     button{
     width: 100px;
+    height:50px;
     padding: 15px 0;
     text-align: center;
     margin: 20px 10px;
@@ -116,19 +115,19 @@ button:hover span{
         </div>   -->
       <div class="frame" id="video-container">
             <h1>Video Live Stream</h1>
-            <video src="{% url 'mask_feed' %}" class="center" id="video"></video>
+            <img src="{% url 'mask_feed' %}" class="center" id="video">
         <div>
           <form>
               <a><button type="button" id="startButton"><span></span>enable cam</button></a>
             {% comment %} <button type="submit"><span></span>capture</button> {% endcomment %}
           </form>
             <form action='/cap' method="post">{% csrf_token %}
-              <a href='/logout'><button type="button"><span></span>EXIT</button></a>
+              <a href='/logout'><button type="button"  id="stopButton"><span></span>EXIT</button></a>
               {% comment %} <button type="submit"><span></span>capture</button> {% endcomment %}
             </form>
             <form action='/gal' method="post">{%csrf_token%}
               <a href="/gal"><button type="submit"><span></span>gallery</button></a>
-            </form>
+            </form> 
           </div>
         </div>
     </div>
@@ -168,23 +167,27 @@ button:hover span{
               }
           });
        </script>
-       <script>
-        const startButton = document.getElementById('startButton');
-        const videoContainer = document.getElementById('video-container');
-        const video = document.getElementById('video');
-    
-        startButton.addEventListener('click', async () => {
-            try {
-                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-                video.srcObject = stream;
-                video.play();
-                videoContainer.style.display = 'block'; // Show video element
-                startButton.style.display = 'none'; // Hide the start button
-            } catch (error) {
-                console.error('Error accessing webcam:', error);
-                alert('Error accessing webcam. Please make sure it is enabled.');
-            }
+       
+
+      <script>
+        const enableWebcamBtn = document.getElementById('startButton');
+        const disableWebcamBtn = document.getElementById('startButton');
+        
+        enableWebcamBtn.addEventListener('click', async () => {
+          try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+          } catch (err) {
+            console.error('Error accessing webcam:', err);
+            alert('Could not access webcam. Please check your device settings.');
+          }
         });
-    </script>
+
+        disableWebcamBtn.addEventListener('click', () => {
+          if (stream) {
+            const tracks = stream.getTracks();
+            tracks.forEach(track => track.stop());
+          }
+        });
+      </script>
     </body>
   </html>
