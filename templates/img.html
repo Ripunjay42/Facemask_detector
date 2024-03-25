@@ -172,16 +172,24 @@ button:hover span{
         const disableWebcamBtn = document.getElementById('startButton');
         const webcamFeed = document.getElementById('webcamFeed');
 
+          document.getElementById('startButton').addEventListener('click', function() {
+              startVideoFeed();
+          });
+      
+          function startVideoFeed() {
+              // Code to start the video feed, you'll need to implement this.
+              // For example, you might use getUserMedia() to access the webcam.
+              // Once you have the stream, you can set it as the source for the <img> tag.
+              // Example:
+                  navigator.mediaDevices.getUserMedia({ video: true })
+                  .then(stream => {
+                      document.getElementById('webcamFeed').srcObject = stream;
+                  })
+                  .catch(error => {
+                      console.error('Error accessing webcam:', error);
+                  });
         
-        enableWebcamBtn.addEventListener('click', async () => {
-          try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-            webcamFeed.srcObject = stream;
-          } catch (err) {
-            console.error('Error accessing webcam:', err);
-            alert('Could not access webcam. Please check your device settings.');
           }
-        });
 
         disableWebcamBtn.addEventListener('click', () => {
           if (stream) {
