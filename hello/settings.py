@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from django.contrib.messages import constants as messages
 from pathlib import Path
 import os
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -19,12 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#an*zm00p!arj)1**-$00j+i!yt%(wwf!=8_8n)l*g+&i0j6sl'
+SECRET_KEY = 'g!o6g4++dd!3@!8qzye28mxd16^x8rlkcn!slguxx!t@)vo2v$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 ALLOWED_HOSTS = ['*']
 
+CSRF_COOKIE_DOMAIN = '.https://facemask-detector4.onrender.com'
 
 # Application definition
 
