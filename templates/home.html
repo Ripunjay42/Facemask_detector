@@ -43,19 +43,24 @@
         .content{
           width: 100%;
           position:absolute;
-          top:50%;
+          top:55%;
           transform: translateY(-50%);
           text-align: center;
           color:#fff;
        }
         .content h1{
-            font-size: 40px;
+            font-size: 2.5em;
             color: aqua;
+        }
+        @media screen and (max-width: 600px) {
+          .content h1 {
+            font-size: 2em;
+          }
         }
         .content p{
           color:firebrick;
           font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-          font-size: 20px ;
+          font-size: 1.2em ;
         }
     </style>
 
