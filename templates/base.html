@@ -14,7 +14,7 @@
         width: 80px;
         height:40px;
         text-align: center;
-        margin: 20px 10px;
+        margin: 20px 20px;
         border-radius: 10px;
         font-weight: bold;
         border: 2px solid green;
@@ -71,13 +71,17 @@ label.form-label{
     font-size: 30px;
     font-weight:bolder;
     }
-    .navbar-toggler{
-      width: 50px;
-      height: 40px;
-      {% comment %} background:success; {% endcomment %}
-      text-align:center;
-      font-size:32px;
+ .navbar-toggler{
+      border:none;
     }
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+      border:none;
+  }
+  .navbar-toggler:hover{
+    box-shadow:none;
+  }
     .banner{
 			  display: block;
 			  position: absolute;
@@ -120,16 +124,69 @@ label.form-label{
           z-index:1;
       }
   }
-    </style>
+  .navbar-toggler-icon {
+    background-image: none!important;
+    background-color: var(--bs-gray-800);
+    height: 3px;
+    width: 25px;
+    margin: 10px 0;
+    position: relative;
+    transition: all 0.35s ease-out;
+    transform-origin: center;
+  }
+  
+  .navbar-toggler-icon::before {
+    display: block;
+    background-color: var(--bs-gray-800);
+    height: 3px;
+    content: "";
+    position: relative;
+    top: -7px;
+    transition: all 0.15s ease-out;/*taken down to hide quicker*/
+    transform-origin: center;
+  }
+  
+  .navbar-toggler-icon::after {
+    display: block;
+    background-color: var(--bs-gray-800);
+    height: 3px;
+    content: "";
+    position: relative;
+    top: 4px;
+    transition: all 0.35s ease-out;
+    transform-origin: center;
+  }
+  
+  .navbar-dark .navbar-toggler-icon,
+  .navbar-dark .navbar-toggler-icon::before,
+  .navbar-dark .navbar-toggler-icon::after {
+    background-color: var(--bs-gray-100);
+  }
+  
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+    transform: rotate(45deg);
+  }
+  
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+    opacity: 0;
+  }
+  
+  .navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+    transform: rotate(-90deg) translateX(7px);
+  }
+</style>
     {% block head %}{% endblock head %}
   </head>
   <body>
     <div class="banner" style=" background-image: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)), url(../static1/img/mm2.jpg);">
       <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
         <div class="container-fluid">
-          <img src="../static1/img/logo.png" height="100px" width="100px" alt="FaceMask">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color:aqua; background:transparent; border:2px solid aqua">
+          <img src="../static1/img/logo.gif" height="85px" width="78px" alt="FaceMask">
+          {% comment %} <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color:white; background:transparent; border:2px solid green;">
             <i class="fas fa-bars"></i>#
+          </button> {% endcomment %}
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
+            <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -153,11 +210,11 @@ label.form-label{
               </ul>
               {% else %}
              <!--button trigger modal login-->
-            <button type="button" class="btn btn-success mx-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <button style="color:white; border-radius: 10px; font-weight:bold; border:2px solid green;" type="button" class="btn btn-transparent" data-bs-toggle="modal" data-bs-target="#loginModal">
               Login
             </button>
              <!-- Button trigger signup modal -->
-          <button type="button" class="btn btn-success mx-3" data-bs-toggle="modal" data-bs-target="#signupModal">
+          <button style="color:white; border-radius: 10px; font-weight:bold; border:2px solid green;" type="button" class="btn btn-transparent" data-bs-toggle="modal" data-bs-target="#signupModal">
               SignUP
           </button>  
           {% endif %}

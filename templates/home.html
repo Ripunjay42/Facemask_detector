@@ -28,7 +28,7 @@
             animation: changetext 6S infinite linear;
             color: rgb(104, 236, 43);
             /* padding-left: 830px; */
-            font-size: 35px;
+            font-size: 28px;
             font-weight:400;
             text-align: center;
         }
@@ -40,7 +40,7 @@
         .content{
           width: 100%;
           position:absolute;
-          top:35%;
+          top:25%;
           {% comment %} transform: translateY(-50%); {% endcomment %}
           text-align: center;
           color:#fff;
@@ -51,7 +51,10 @@
         }
         @media screen and (max-width: 600px) {
           .content h1 {
-            font-size: 2em;
+            font-size: 1.6em;
+          }
+          .change-content:after{
+            font-size: 1.4em;
           }
         }
         .content p{
@@ -98,11 +101,11 @@
         <P>COVID 19 ! <br>WHO has made wearing masks compulsory<br>
             Sign up or Login to use real time face mask detector</P>
           <div>
-            <a href="/about"><button class="gg" type="button" class="btn1"><span class="gg1"></span>MORE</button></a>
+            <a href="/about"><button id="btn" class="gg" type="button" class="btn1"><span class="gg1"></span>MORE</button></a>
             <!-- <a href="/contact"><button type="button"><span></span>CONTACT</button></a> -->
-            <button type="button"  class="gg" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <button id="btn" type="button"  class="gg" data-bs-toggle="modal" data-bs-target="#loginModal">
             <span clas="gg1"></span>Login</button>
-            <button class="gg"type="button" data-bs-toggle="modal" data-bs-target="#signupModal">
+            <button id="btn" class="gg"type="button" data-bs-toggle="modal" data-bs-target="#signupModal">
             <span class="gg1"></span>SignUP</button>
           </div>
       </div>
