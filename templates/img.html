@@ -164,14 +164,11 @@
           document.getElementById("loading").style.display = "block";
 
           // Simulate loading for 3 seconds
-          setTimeout(function () {
-            // Hide loading indicator after 3 seconds
-            document.getElementById("loading").style.display = "none";
-
-            // Add your code here to execute after loading
-            // For example:
-            //alert("Content loaded!");
-          }, 10000); // 3000 milliseconds = 3 seconds
+          /*setTimeout(
+            function () 
+            {
+                document.getElementById("loading").style.display = "none";
+            }, 10000);*/ 
         });
     </script>
 
@@ -206,6 +203,7 @@
           const camdiv=document.getElementById("webcam-container");
           camdiv.appendChild(webcam.canvas);
           webcam.canvas.style.border = "3px solid red";
+          document.getElementById("loading").style.display = "none";
           
           labelContainer = document.getElementById("label-container");
           for (let i = 0; i < maxPredictions; i++) { // and class labels
