@@ -79,6 +79,7 @@
       #loading {
         display: none; /* Initially hide the loading indicator */
       }
+  
     </style>
   </head>
   <body>
@@ -194,7 +195,7 @@
 
           // Convenience function to setup a webcam
           const flip = true; // whether to flip the webcam
-          webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
+          webcam = new tmImage.Webcam(350, 350, flip); // width, height, flip
           await webcam.setup(); // request access to the webcam
           await webcam.play();
           window.requestAnimationFrame(loop);
@@ -204,9 +205,8 @@
           // append elements to the DOM
           const camdiv=document.getElementById("webcam-container");
           camdiv.appendChild(webcam.canvas);
-          camdiv.style.width='400px';
-          camdiv.style.height='400px';
-          camdiv.style.border = '2px solid red';
+          webcam.canvas.style.border = "3px solid red";
+          
           labelContainer = document.getElementById("label-container");
           for (let i = 0; i < maxPredictions; i++) { // and class labels
               labelContainer.appendChild(document.createElement("div"));
