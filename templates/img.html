@@ -1,12 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
     <!-- <link rel="stylesheet" href="/static1/style.css"> -->
     <title>{% block title %}{% endblock title %}video live stream</title>
     <style>
@@ -16,216 +21,247 @@
         scrollbar-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
         scrollbar-width: 3px;
       }
-    .banner{
+      .banner {
         justify-content: flex-start;
-        background-image: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)), url(../static1/img/mm2.jpg);
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.85)
+          ),
+          url(../static1/img/mm2.jpg);
         background-size: cover;
         background-position: center;
         overflow-y: auto;
         display: block;
-			  position: absolute;
-			  width: 100%;
-			  height: 110%;
-    }
-    button{
-    width: 100px;
-    height:40px;
-    text-align: center;
-    margin: 20px 10px;
-    border-radius: 6px;
-    font-weight: bold;
-    border: 1px solid aqua;
-    background:transparent;
-    color: red;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-button:hover{
-  box-shadow: rgba(0, 0, 0, 0.815) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
-}
-.frame{
-    width: 100%;
-    position:absolute;
-    text-align: center;
-    color:#fff;
-}
-      /* /* .content{
+        position: absolute;
+        width: 100%;
+        height: 110%;
+      }
+      button {
+        width: 100px;
+        height: 40px;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 6px;
+        font-weight: bold;
+        border: 1px solid aqua;
+        background: transparent;
+        color: red;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+      button:hover {
+        box-shadow: rgba(0, 0, 0, 0.815) 0 -25px 18px -14px inset,
+          rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+          rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+          rgba(44, 187, 99, 0.25) 0 16px 32px;
+        transform: scale(1.05) rotate(-1deg);
+      }
+      .frame {
         width: 100%;
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         text-align: center;
-        color:aqua;
-        } */
-       .frame h1{
+        color: #fff;
+      }
+      .frame h1 {
         font-size: 40px;
-        color:firebrick;
+        color: firebrick;
         font-weight: bolder;
-        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
       }
       .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width:50%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
       }
-      /* .img1{
-        padding-left: 100px;
-        padding-top: 20px;
-        padding-bottom: 10px;
+      #loading {
+        display: none; /* Initially hide the loading indicator */
       }
-      .img2{
-        padding-left: 1340px;
-        padding-top: 120px;
-      } */
     </style>
   </head>
   <body>
     <div class="banner">
       <nav class="navbar navbar-expand-sm navbar-light">
         <div class="container-fluid">
-          <img src="../static1/img/logo.png" height="100px" width="100px" alt="FaceMask">
+          <img
+            src="../static1/img/logo.png"
+            height="100px"
+            width="100px"
+            alt="FaceMask"
+          />
           <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button> -->
-            <!-- <li class="nav-item dropdown mr-2">
+          <!-- <li class="nav-item dropdown mr-2">
               <a class="nav-li dropdown-toggle" style="color:rgb(104, 236, 43);font-size: larger;"href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Welcome {{request.user}}
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="/logout">Logout</a></li>
               </ul> -->
-            </div>
-        </nav>
-        <!-- <div class="img1">
+        </div>
+      </nav>
+      <!-- <div class="img1">
           <img src="/static1/img/maskdetection.png" alt="mask">
         </div>
         <div class="img2">
           <img src="/static1/img/maskdetection.png" alt="mask">
         </div>   -->
       <div class="frame" id="video-container">
-            <h1>Video Live Stream</h1>
-            <div id="label-container"></div>
-            <div id="webcam-container"></div>
-            {% comment %} <img src="{% url 'mask_feed' %}" class="center" id="webcamFeed"> {% endcomment %}
+        <h1>Video Live Stream</h1>
+        <div id="label-container"></div>
+        <div id="webcam-container"></div>
+        <div id="loading">Loading...</div>
+        {% comment %} <img src="{% url 'mask_feed' %}" class="center" id="webcamFeed" /> {% endcomment %}
         <div>
           <form>
-              <a><button id='start_button' type="button" onclick="init()"><span></span>enable cam</button></a>
-            {% comment %} <button type="submit"><span></span>capture</button> {% endcomment %}
+            <a
+              ><button id="start_button" type="button" onclick="init()">
+                <span></span>enable cam
+              </button></a
+            >
+            {% comment %} <button type="submit"><span></span>capture</button> {%endcomment %}
           </form>
-            <form action='/cap' method="post">{% csrf_token %}
-              <a href='/logout'><button type="button"  id="stopButton"><span></span>EXIT</button></a>
-              {% comment %} <button type="submit"><span></span>capture</button> {% endcomment %}
-            </form>
-            <form action='/gal' method="post">{%csrf_token%}
-              <a href="/gal"><button type="submit"><span></span>gallery</button></a>
-            </form> 
-          </div>
+          <form action="/cap" method="post">
+            {% csrf_token %}
+            <a href="/logout"
+              ><button type="button" id="stopButton">
+                <span></span>EXIT
+              </button></a
+            >
+            {% comment %} <button type="submit"><span></span>capture</button> {%endcomment %}
+          </form>
+          <form action="/gal" method="post">
+            {%csrf_token%}
+            <a href="/gal"
+              ><button type="submit"><span></span>gallery</button></a
+            >
+          </form>
         </div>
+      </div>
     </div>
-      
-      {% block body %}{% endblock body %}
-      <!-- Optional JavaScript; choose one of the two! -->
-  
-      <!-- Option 1: Bootstrap Bundle with Popper -->
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-      <script>
-        const URL = "https://teachablemachine.withgoogle.com/models/hBKYa4zJe/";
 
-        let model, webcam, labelContainer, maxPredictions;
+    {% block body %}{% endblock body %}
+    <!-- Optional JavaScript; choose one of the two! -->
 
-        {% comment %} window.onload = init; {% endcomment %}
-        
-        // Load the image model and setup the webcam
-        async function init() {
-        
-        
-            const modelURL = URL + "model.json";
-            const metadataURL = URL + "metadata.json";
-        
-            // load the model and metadata
-            model = await tmImage.load(modelURL, metadataURL);
-            maxPredictions = model.getTotalClasses();
-        
-            // Convenience function to setup a webcam
-            const flip = true; // whether to flip the webcam
-            webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
-            await webcam.setup(); // request access to the webcam
-            await webcam.play();
-            window.requestAnimationFrame(loop);
-            
-            document.getElementById("start_button").classList.add('removed');
-        
-            // append elements to the DOM
-            document.getElementById("webcam-container").appendChild(webcam.canvas);
-            labelContainer = document.getElementById("label-container");
-            for (let i = 0; i < maxPredictions; i++) { // and class labels
-                labelContainer.appendChild(document.createElement("div"));
-            }
-        }
-        
-        async function loop() {
-            webcam.update(); // update the webcam frame
-            await predict();
-            window.requestAnimationFrame(loop);
-        }
-        
-        
-        // run the webcam image through the image model
-        async function predict() {
-            // predict can take in an image, video or canvas html element
-            const prediction = await model.predict(webcam.canvas);
-        
-        
-            for (let i = 0; i < maxPredictions; i++) {
-                pred_class = prediction[i].className
-                pred_score = prediction[i].probability.toFixed(2)
-        
-                action(pred_class, pred_score)
-                
-                const classPrediction = pred_class + ": " + pred_score;
-                console.log(classPrediction)
-        
-                labelContainer.childNodes[i].innerHTML = classPrediction;
-            }
-        }
-        
-        
-        var audio = new Audio('../static1/mask.mp3');
-        var first_time = true;  
-            
-        function play(){
-            console.log(audio.ended);
-            
-            if (first_time){
-                audio.play();
-                first_time = false;
-            }
-            if (audio.ended){
-                // console.log('New Started');
-                audio.play();
-            }
-            else{
-                // console.log('Old Audio is Playing');
-                }
-            
-            }   
-        
-        function action(pred_class, pred_score){
-            if (pred_class=='No Mask' && pred_score>0.5){
-                play();
-            }
-        
-        }
-        
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+    <script>
+      document
+        .getElementById("start_button")
+        .addEventListener("click", function () {
+          // Show loading indicator
+          document.getElementById("loading").style.display = "block";
+
+          // Simulate loading for 3 seconds
+          setTimeout(function () {
+            // Hide loading indicator after 3 seconds
+            document.getElementById("loading").style.display = "none";
+
+            // Add your code here to execute after loading
+            // For example:
+            //alert("Content loaded!");
+          }, 5000); // 3000 milliseconds = 3 seconds
+        });
+    </script>
+
+    <script>
+      const URL = "https://teachablemachine.withgoogle.com/models/hBKYa4zJe/";
+
+      let model, webcam, labelContainer, maxPredictions;
+
+      {% comment %} window.onload = init; {% endcomment %}
+
+      // Load the image model and setup the webcam
+      async function init() {
 
 
+          const modelURL = URL + "model.json";
+          const metadataURL = URL + "metadata.json";
+
+          // load the model and metadata
+          model = await tmImage.load(modelURL, metadataURL);
+          maxPredictions = model.getTotalClasses();
+
+          // Convenience function to setup a webcam
+          const flip = true; // whether to flip the webcam
+          webcam = new tmImage.Webcam(400, 400, flip); // width, height, flip
+          await webcam.setup(); // request access to the webcam
+          await webcam.play();
+          window.requestAnimationFrame(loop);
+
+          document.getElementById("start_button").classList.add('removed');
+
+          // append elements to the DOM
+          document.getElementById("webcam-container").appendChild(webcam.canvas);
+          labelContainer = document.getElementById("label-container");
+          for (let i = 0; i < maxPredictions; i++) { // and class labels
+              labelContainer.appendChild(document.createElement("div"));
+          }
+      }
+
+      async function loop() {
+          webcam.update(); // update the webcam frame
+          await predict();
+          window.requestAnimationFrame(loop);
+      }
 
 
-      </script>
-    </body>
-  </html>
+      // run the webcam image through the image model
+      async function predict() {
+          // predict can take in an image, video or canvas html element
+          const prediction = await model.predict(webcam.canvas);
+
+
+          for (let i = 0; i < maxPredictions; i++) {
+              pred_class = prediction[i].className
+              pred_score = prediction[i].probability.toFixed(2)
+
+              action(pred_class, pred_score)
+
+              const classPrediction = pred_class + ": " + pred_score;
+              console.log(classPrediction)
+
+              labelContainer.childNodes[i].innerHTML = classPrediction;
+          }
+      }
+
+
+      var audio = new Audio('../static1/mask.mp3');
+      var first_time = true;
+
+      function play(){
+          console.log(audio.ended);
+
+          if (first_time){
+              audio.play();
+              first_time = false;
+          }
+          if (audio.ended){
+              // console.log('New Started');
+              audio.play();
+          }
+          else{
+              // console.log('Old Audio is Playing');
+              }
+
+          }
+
+      function action(pred_class, pred_score){
+          if (pred_class=='No Mask' && pred_score>0.5){
+              play();
+          }
+
+      }
+    </script>
+  </body>
+</html>

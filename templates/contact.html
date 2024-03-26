@@ -3,18 +3,13 @@
 {% block head %}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-    .banner{
-                display: block;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(../static/img/mm2.jpg);
-                background-size: cover;
-                background-attachment: fixed;
-                background-position: center;
-                background-repeat: no-repeat;
-                overflow-y: auto;
-            }
+.banner{
+    justify-content: flex-start;
+    background-image: linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.85)), url(../static1/img/mm2.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow-y: auto;
+}
     .form-lab{
         color:chartreuse;
         font-size: 20px;
@@ -34,11 +29,7 @@
     position: relative;
 }
 .container{
-    padding-top:1rem;
-    position:absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    padding-left:1rem;
+        margin-top:10%;
     }
 .container h1{
     font-size: 40px;
@@ -46,6 +37,8 @@
 }
 input[class="form-control"], textarea[class="form-control"] {
 background-color:rgb(204, 233, 210);
+    justify-content:center;
+    align-item:center;s
 }
 </style>
 {% endblock head %}
@@ -74,7 +67,7 @@ background-color:rgb(204, 233, 210);
                 <input type="phone" class="form-control" id="phone" name="phone" placeholder="Contact No:">
             </div>
             <div class="mb-3">
-                <label for="desc" class="form-lab">Dexcription</label>
+                <label for="desc" class="form-lab">Description</label>
                 <textarea class="form-control" id="desc" rows="3" name="desc" placeholder="describe"></textarea>
             </div>
             <button class="sbutton" type="Submit">Submit</button>
