@@ -114,15 +114,11 @@
         <h1>Video Live Stream</h1>
         <div id="label-container"></div>
         <div id="webcam-container"></div>
-        <div id="loading"><img src="../static1/img/load.gif" height="180px" width="150px" alt="load"/><br>Loading...</div>
+        <div id="loading"><img src="../static1/img/load.gif" height="180px" width="150px" alt="load"/><br>enable your webcam<br>Loading...</div>
         {% comment %} <img src="{% url 'mask_feed' %}" class="center" id="webcamFeed" /> {% endcomment %}
         <div>
           <form>
-            <a
-              ><button id="start_button" type="button" onclick="init()">
-                <span></span>enable cam
-              </button></a
-            >
+            <a><button id="start_button" type="button" onclick="init()"><span></span>enable cam</button></a>
             {% comment %} <button type="submit"><span></span>capture</button> {%endcomment %}
           </form>
           <form action="/cap" method="post">
@@ -156,33 +152,21 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 
-    <script>
-      document
-        .getElementById("start_button")
-        .addEventListener("click", function () {
-          // Show loading indicator
+    {% comment %} <script>
+      document.getElementById("start_button").addEventListener("click", function () 
+        {
           document.getElementById("loading").style.display = "block";
-
-          // Simulate loading for 3 seconds
-          /*setTimeout(
-            function () 
-            {
-                document.getElementById("loading").style.display = "none";
-            }, 10000);*/ 
         });
-    </script>
+    </script> {% endcomment %}
 
     <script>
       const URL = "https://teachablemachine.withgoogle.com/models/hBKYa4zJe/";
 
       let model, webcam, labelContainer, maxPredictions;
-
-      {% comment %} window.onload = init; {% endcomment %}
-
       // Load the image model and setup the webcam
-      async function init() {
-
-
+      async function init() 
+      {
+          document.getElementById("loading").style.display = "block";
           const modelURL = URL + "model.json";
           const metadataURL = URL + "metadata.json";
 
@@ -204,6 +188,7 @@
           camdiv.appendChild(webcam.canvas);
           webcam.canvas.style.border = "3px solid red";
           document.getElementById("loading").style.display = "none";
+          disableButton(); 
           
           labelContainer = document.getElementById("label-container");
           for (let i = 0; i < maxPredictions; i++) { // and class labels
@@ -211,7 +196,8 @@
           }
       }
 
-      async function loop() {
+      async function loop() 
+      {
           webcam.update(); // update the webcam frame
           await predict();
           window.requestAnimationFrame(loop);
@@ -258,12 +244,18 @@
 
           }
 
-      function action(pred_class, pred_score){
+      function action(pred_class, pred_score)
+      {
           if (pred_class=='No Mask' && pred_score>0.5){
               play();
           }
 
       }
+
+      function disableButton() 
+      {
+        document.getElementById("start_button").disabled = true; 
+    }
     </script>
   </body>
 </html>
