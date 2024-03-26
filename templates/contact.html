@@ -90,13 +90,5 @@ background-color:rgb(204, 233, 210);
       }
       return cookieValue;
   }
-  
-  $.ajaxSetup({
-      beforeSend: function(xhr, settings) {
-          if (!settings.crossDomain) {
-              xhr.setRequestHeader('X-CSRFToken', getCookie('csrftoken'));
-          }
-      }
-  });
 </script>
 {% endblock body %}

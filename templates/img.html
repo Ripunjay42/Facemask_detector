@@ -113,7 +113,7 @@
         <h1>Video Live Stream</h1>
         <div id="label-container"></div>
         <div id="webcam-container"></div>
-        <div id="loading">Loading...</div>
+        <div id="loading"><img src="../static1/img/load.gif" height="180px" width="150px" alt="load"/><br>Loading...</div>
         {% comment %} <img src="{% url 'mask_feed' %}" class="center" id="webcamFeed" /> {% endcomment %}
         <div>
           <form>
@@ -202,7 +202,11 @@
           document.getElementById("start_button").classList.add('removed');
 
           // append elements to the DOM
-          document.getElementById("webcam-container").appendChild(webcam.canvas);
+          const camdiv=document.getElementById("webcam-container");
+          camdiv.appendChild(webcam.canvas);
+          camdiv.style.width='400px';
+          camdiv.style.height='400px';
+          camdiv.style.border = '2px solid red';
           labelContainer = document.getElementById("label-container");
           for (let i = 0; i < maxPredictions; i++) { // and class labels
               labelContainer.appendChild(document.createElement("div"));
