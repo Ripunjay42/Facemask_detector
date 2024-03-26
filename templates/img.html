@@ -166,6 +166,7 @@
       // Load the image model and setup the webcam
       async function init() 
       {
+          disableButton(); 
           document.getElementById("loading").style.display = "block";
           const modelURL = URL + "model.json";
           const metadataURL = URL + "metadata.json";
@@ -188,7 +189,6 @@
           camdiv.appendChild(webcam.canvas);
           webcam.canvas.style.border = "3px solid red";
           document.getElementById("loading").style.display = "none";
-          disableButton(); 
           
           labelContainer = document.getElementById("label-container");
           for (let i = 0; i < maxPredictions; i++) { // and class labels
