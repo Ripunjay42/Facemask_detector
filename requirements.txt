@@ -17,7 +17,6 @@ cycler==0.12.1
 distlib==0.3.4
 dj-database-url==1.0.0
 Django==4.0
-django-heroku==0.3.1
 django-screenshots==0.2.0
 exceptiongroup==1.2.0
 flatbuffers==2.0
