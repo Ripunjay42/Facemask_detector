@@ -25,7 +25,7 @@ SECRET_KEY = 'g!o6g4++dd!3@!8qzye28mxd16^x8rlkcn!slguxx!t@)vo2v$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['.vervel.app', '.now.sh', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 CSRF_COOKIE_DOMAIN = '.https://facemask-detector4.onrender.com'
 
@@ -81,12 +81,8 @@ WSGI_APPLICATION = 'hello.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'mRHjFXKsgIDbNJAAOiqgVWMNSecZWkun',
-        'HOST': 'roundhouse.proxy.rlwy.net',
-        'PORT': '57370',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -132,10 +128,7 @@ MEDIA_URL ='/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static1'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'static1')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static1')
-
+# STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static'),)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-WSGI_APPLICATION = 'api.wsgi.app'
