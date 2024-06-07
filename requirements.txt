@@ -106,4 +106,4 @@ whitenoise
 wrapt
 wsproto
 zipp
-g
+gunicorn
