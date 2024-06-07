@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'hello.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'mRHjFXKsgIDbNJAAOiqgVWMNSecZWkun',
+        'HOST': 'roundhouse.proxy.rlwy.net',
+        'PORT': '57370',
     }
 }
 
@@ -128,7 +132,7 @@ MEDIA_URL ='/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
-STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'static1'),)
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static1'),
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static1')
 
