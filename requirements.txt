@@ -90,7 +90,7 @@ tensorboard-data-server
 tensorboard-plugin-wit
 tensorflow
 tensorflow-estimator
-tensorflow-io-gcs-filesystem=
+tensorflow-io-gcs-filesystem
 termcolor
 threadpoolctl
 toml
