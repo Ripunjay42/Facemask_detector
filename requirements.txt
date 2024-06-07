@@ -31,7 +31,7 @@ h11
 h5py
 heroku
 id
-importlib-metadata=
+importlib-metadata
 imutils
 ipfshttpclient
 isort
