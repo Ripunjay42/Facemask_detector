@@ -45,7 +45,6 @@ lazy-object-proxy==1.4.3
 libclang==12.0.0
 Markdown==3.3.6
 MarkupSafe==2.1.5
-matplotlib==3.2.1
 mccabe==0.6.1
 MouseInfo==0.1.3
 mss==6.1.0
