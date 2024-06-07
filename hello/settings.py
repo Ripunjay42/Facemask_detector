@@ -25,7 +25,7 @@ SECRET_KEY = 'g!o6g4++dd!3@!8qzye28mxd16^x8rlkcn!slguxx!t@)vo2v$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-ALLOWED_HOSTS = ['.vervel.app', '.now.sh']
+ALLOWED_HOSTS = ['.vervel.app', '.now.sh', '127.0.0.1']
 
 CSRF_COOKIE_DOMAIN = '.https://facemask-detector4.onrender.com'
 
@@ -137,3 +137,5 @@ STATICFILES_DIRS = os.path.join(BASE_DIR, 'static1'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static1')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+WSGI_APPLICATION = 'api.wsgi.app'
