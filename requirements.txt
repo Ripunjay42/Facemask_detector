@@ -1,8 +1,6 @@
 absl-py
 asgiref
 astroid
-astunparse
-async-generato
 attrs
 backports.entry-points-selectable
 backports.zoneinfo
