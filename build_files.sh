@@ -1,9 +1,2 @@
-echo "BUILD START"
-
-# Install dependencies
-Pip install -r requirements.txt
-
-# Collect static files
-Python3.8 manage.py collectstatic --noinput --clear
-
-echo "BUILD END"
+pip install -r requirements.txt 
+python3.9 manage.py collectstatic
